@@ -19,8 +19,8 @@ class redlight_swish extends WC_Payment_Gateway {
  
         // If you want to show an image next to the gateway's name on the frontend, enter a URL to an image.
         $this->icon = plugins_url( 'assets/images/swish_logo.jpg', __FILE__ );
-        $this->swishimglogo = plugins_url( 'assets/images/swish_logo_image.png', __FILE__ );
-        $this->swishtextlogo = plugins_url( 'assets/images/swish_logo_text.png', __FILE__ );
+        $this->swishimglogo = plugins_url( 'assets/images/Swish-logo-image-vert.png', __FILE__ );
+        $this->swishtextlogo = plugins_url( 'assets/images/Swish-logo-text-vert.png', __FILE__ );
 		
 		//Prepare Css
 		wp_register_style( 'swish', plugins_url( 'assets/css/swish.css', __FILE__ ) );
@@ -54,7 +54,7 @@ class redlight_swish extends WC_Payment_Gateway {
         // Actions
         //add_action( 'admin_notices', array( $this,  'do_ssl_check' ) );
 		add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
-    	add_action( 'woocommerce_thankyou', array( $this, 'thankyou_page' ) );
+    	add_action( 'woocommerce_thankyou_redlight_swish', array( $this, 'thankyou_page' ) ); 
 
     	// Customer Emails
     	add_action( 'woocommerce_email_before_order_table', array( $this, 'email_instructions' ), 10, 3 );
@@ -165,13 +165,13 @@ class redlight_swish extends WC_Payment_Gateway {
 				wp_enqueue_style('swish');
 				?>
 			<div class="logo centered">
-					<img class="rotate centered" src="<?php echo $this->swishimglogo;?>" /></br>
+					<img class="rotate centered" src="<?php echo $this->swishimglogo;?>" />
 					<img src="<?php echo $this->swishtextlogo;?>" />
 				</div>
 				<div class="messages centered"><?php
 					echo '<h2>' . __( 'Att betala med Swish', 'redlight-swish' ) . '</h2>' . PHP_EOL;
 					echo '<p>Vänligen betala din order genom att swisha <strong>'.$order->order_total.' '.$order->order_currency.'</strong> till nummer <strong>'. $this->swish_number .'</strong>. Ange <strong>'. $order_id . '</strong> som meddelande.</p>
-					<p>Det kan ta några minuter innan vi registrerat din betalning och du får din orderbekräftelse.</p>
+					<p>Eftersom betalningar gjorda via Swish måste granskas manuellt och matchas mot din order så kan det ta upp till 24 timmar innan det är gjort. Du får ett mail när din order är behandlad.</p>
 				</div>';
 				
 	    		echo '<ul class="order_details swish_details">' . PHP_EOL;
