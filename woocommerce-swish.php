@@ -160,7 +160,7 @@ class redlight_swish extends WC_Payment_Gateway {
 
     	if ( ! empty( $swish_account ) ) {
 	    		$swish_account = (object) $swish_account;
-				
+				$order = new WC_Order($order_id);
 				//Load Swish CSS
 				wp_enqueue_style('swish');
 				?>
@@ -170,7 +170,7 @@ class redlight_swish extends WC_Payment_Gateway {
 				</div>
 				<div class="messages centered"><?php
 					echo '<h2>' . __( 'Att betala med Swish', 'redlight-swish' ) . '</h2>' . PHP_EOL;
-					echo '<p>Vänligen betala din order genom att swisha <strong>'.$order->order_total.' {currency}</strong> till nummer <strong>'. $this->swish_number .'</strong>. Ange <strong>'. $order_id . '</strong> som meddelande.</p>
+					echo '<p>Vänligen betala din order genom att swisha <strong>'.$order->order_total.' '.$order->order_currency.'</strong> till nummer <strong>'. $this->swish_number .'</strong>. Ange <strong>'. $order_id . '</strong> som meddelande.</p>
 					<p>Det kan ta några minuter innan vi registrerat din betalning och du får din orderbekräftelse.</p>
 				</div>';
 				
