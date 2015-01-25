@@ -86,28 +86,11 @@ class redlight_swish extends WC_Payment_Gateway {
                 'default'   => __( 'Swish fungerar mellan  Danske Bank,  Handelsbanken,  ICA Banken,  Länsförsäkringar,  Nordea,  SEB,  Skandia,  Sparbanken Syd,  Sparbanken Öresund samt Swedbank och Sparbankerna.', 'redlight-swish' ),
 				'desc_tip'    => true,
             ),
-            'bank_personalnr' => array(
-                'title'     => __( 'Personnummer', 'redlight-swish' ),
-                'type'      => 'text',
-                'desc_tip'  => __( 'Ange det personnummer som du anänder för att logga in på Swedbank.', 'redlight-swish' ),
-            ),
-            'bank_pin' => array(
-                'title'     => __( 'Personlig kod', 'redlight-swish' ),
-                'type'      => 'password',
-                'description' => __( 'Din personliga kod till swedbank.', 'spyr-authorizenet-aim' ),
-            ),
-			'environment' => array(
-                'title'     => __( 'Test Mode', 'redlight-swish' ),
-                'label'     => __( 'Enable Test Mode', 'redlight-swish' ),
-                'type'      => 'checkbox',
-                'description' => __( 'Place the payment gateway in test mode.', 'redlight-swish' ),
-                'default'   => 'no',
-            ),
-			'instructions' => array(
-				'title'       => __( 'Instruktioner', 'redlight-swish' ),
+			'message' => array(
+				'title'       => __( 'Meddelande', 'redlight-swish' ),
 				'type'        => 'textarea',
 				'description' => __( 'Instruktioner som kommer att visas på "Tack för din order" och i e-postmeddelande.', 'redlight-swish' ),
-				'default'     => '',
+				'default'     => 'Eftersom betalningar gjorda via Swish måste granskas manuellt och matchas mot din order så kan det ta upp till 24 timmar innan det är gjort. Du får ett mail när din order är behandlad.',
 				'desc_tip'    => true,
 			),
 			'swish_number' => array(
@@ -170,8 +153,8 @@ class redlight_swish extends WC_Payment_Gateway {
 				</div>
 				<div class="messages centered"><?php
 					echo '<h2>' . __( 'Att betala med Swish', 'redlight-swish' ) . '</h2>' . PHP_EOL;
-					echo '<p>Vänligen betala din order genom att swisha <strong>'.$order->order_total.' '.$order->order_currency.'</strong> till nummer <strong>'. $this->swish_number .'</strong>. Ange <strong>'. $order_id . '</strong> som meddelande.</p>
-					<p>Eftersom betalningar gjorda via Swish måste granskas manuellt och matchas mot din order så kan det ta upp till 24 timmar innan det är gjort. Du får ett mail när din order är behandlad.</p>
+					echo '<p>Vänligen betala din order genom att swisha <strong>'.$order->order_total.' '.$order->order_currency.'</strong> till nummer <strong>'. $this->swish_number .'</strong>. Ange <strong>'. $order_id . '</strong> som meddelande.</p>'.
+					wpautop( wptexturize( $this->message ) ).'
 				</div>';
 				
 	    		echo '<ul class="order_details swish_details">' . PHP_EOL;
