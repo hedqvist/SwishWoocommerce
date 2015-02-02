@@ -97,7 +97,38 @@ class redlight_swish extends WC_Payment_Gateway {
 				'title'     => __( 'Ditt swish nummer', 'redlight-swish' ),
                 'type'      => 'text',
                 'description' => __( 'Ange numret som du fick när du anslöt till swish.', 'redlight-swish' ),
-			)
+			),
+			'show_desc' => array(
+                'title'     => __( 'Visa / Dölj beskrivning', 'redlight-swish' ),
+                'label'     => __( 'Visa beskrvning', 'redlight-swish' ),
+                'type'      => 'checkbox',
+                'default'   => 'no',
+            ),
+			'swish_number_desc' => array(
+				'title'       => __( 'Beskrivning av Swishkonto', 'redlight-swish' ),
+				'type'        => 'textarea',
+				'description' => __( 'Exempel: Aktiebolag AB', 'redlight-swish' ),
+				'default'     => '',
+				'desc_tip'    => true,
+			),
+			'swish_number_two' => array(
+				'title'     => __( 'Ditt swish nummer', 'redlight-swish' ),
+                'type'      => 'text',
+                'description' => __( 'Om du har fler än ett swishnummer, ange det andra här. Om inte, lämna tomt', 'redlight-swish' ),
+			),
+			'show_desc_two' => array(
+                'title'     => __( 'Visa / Dölj beskrivning', 'redlight-swish' ),
+                'label'     => __( 'Visa beskrvning', 'redlight-swish' ),
+                'type'      => 'checkbox',
+                'default'   => 'no',
+            ),
+			'swish_number_desc_two' => array(
+				'title'       => __( 'Beskrivning av Swishkonto', 'redlight-swish' ),
+				'type'        => 'textarea',
+				'description' => __( 'Exempel: Dotterbolag AB', 'redlight-swish' ),
+				'default'     => '',
+				'desc_tip'    => true,
+			),
         );      
     }
 
@@ -152,10 +183,21 @@ class redlight_swish extends WC_Payment_Gateway {
 					<img src="<?php echo $this->swishtextlogo;?>" />
 				</div>
 				<div class="messages centered"><?php
-					echo '<h2>' . __( 'Att betala med Swish', 'redlight-swish' ) . '</h2>' . PHP_EOL;
-					echo '<p>Vänligen betala din order genom att swisha <strong>'.$order->order_total.' '.$order->order_currency.'</strong> till nummer <strong>'. $this->swish_number .'</strong>. Ange <strong>'. $order_id . '</strong> som meddelande.</p>'.
-					wpautop( wptexturize( $this->message ) ).'
-				</div>';
+						echo '<h2>' . __( 'Att betala med Swish', 'redlight-swish' ) . '</h2>' . PHP_EOL;
+						echo '<p>Vänligen betala din order genom att swisha <strong>'.$order->order_total.' '.$order->order_currency.'</strong> till ';
+						if($this->show_desc == 'yes'){echo $this->swish_number_desc . ', <strong>';}else{echo 'nummer <strong>';}
+						echo $this->swish_number .'</strong>.';
+						if(isset($this->swish_number_two) && $this->swish_number_two !== ''){
+							echo '<br>Eller så betalar du till ';
+							if($this->show_desc_two == 'yes'){
+								echo $this->swish_number_desc_two . ', <strong>';
+							}
+							else{echo 'nummer <strong>';}
+						echo $this->swish_number_two .'</strong>.';
+							}
+							echo '<br>Ange <strong>'. $order_id . '</strong> som meddelande.</p>'.
+						wpautop( wptexturize( $this->message ) ).'</div>';
+						
 				
 	    		echo '<ul class="order_details swish_details">' . PHP_EOL;
 
