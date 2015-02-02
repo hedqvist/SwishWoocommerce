@@ -195,7 +195,7 @@ class redlight_swish extends WC_Payment_Gateway {
 							else{echo 'nummer <strong>';}
 						echo $this->swish_number_two .'</strong>.';
 							}
-							echo '<br>Ange <strong>'. $order_id . '</strong> som meddelande.</p>'.
+							echo '<br>Ange <strong>'. $order_id . '</strong> som meddelande i din Swish-app.</p>'.
 						wpautop( wptexturize( $this->message ) ).'</div>';
 						
 				
