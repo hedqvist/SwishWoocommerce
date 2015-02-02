@@ -188,7 +188,7 @@ class redlight_swish extends WC_Payment_Gateway {
 						if($this->show_desc == 'yes'){echo $this->swish_number_desc . ', <strong>';}else{echo 'nummer <strong>';}
 						echo $this->swish_number .'</strong>.';
 						if(isset($this->swish_number_two) && $this->swish_number_two !== ''){
-							echo '<br>Eller så betalar du till ';
+							echo '<br>Alternativt betalar du till ';
 							if($this->show_desc_two == 'yes'){
 								echo $this->swish_number_desc_two . ', <strong>';
 							}
