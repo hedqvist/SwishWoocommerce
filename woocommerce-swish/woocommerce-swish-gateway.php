@@ -40,6 +40,8 @@ function init_woocommerce_swish_gateway() {
 
         function __construct() {
 
+            $this->id = __("redlight_swish", "redlight-swish");
+
             // The Title shown on the top of the Payment Gateways Page next to all the other Payment Gateways
             $this->method_title = __( "Swish", 'redlight-swish' );
 
@@ -245,7 +247,6 @@ function init_woocommerce_swish_gateway() {
                 }
                 echo '<br>Ange <strong>'. $order_id . '</strong> som meddelande i din Swish-app.</p>'.
                 wpautop( wptexturize( $this->message ) ).'</div>';
-
 
                 echo '<ul class="order_details swish_details">' . PHP_EOL;
 
