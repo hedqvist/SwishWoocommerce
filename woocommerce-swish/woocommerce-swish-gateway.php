@@ -196,14 +196,12 @@ function init_woocommerce_swish_gateway() {
          * @param bool $plain_text
          * @return void
          */
-
         public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
-            if ( ! $sent_to_admin && 'swish' === $order->payment_method && $order->has_status( 'on-hold' ) ) {
-                if ( $this->instructions ) {
-                    echo wpautop( wptexturize( $this->instructions ) ) . PHP_EOL;
-                }
-                $this->swish_details( $order->id );
-            }
+
+          if ( ! $sent_to_admin && 'redlight_swish' === $order->payment_method && $order->has_status( 'on-hold' ) ) {
+            $this->swish_email_details( $order->id );
+          }
+
         }
 
         /**
@@ -257,6 +255,52 @@ function init_woocommerce_swish_gateway() {
 
             }
         }
+        
+        	/**
+          * Get bank details and place into a list format
+          */
+        private function swish_email_details( $order_id = '' ) {
+
+            if ( empty( $this->swish_number ) ) {
+                return;
+            }
+
+            $swish_account = apply_filters( 'woocommerce_swish_account', $this->swish_number );
+
+            if ( ! empty( $swish_account ) ) {
+                $swish_account = (object) $swish_account;
+                $order = new WC_Order($order_id);
+                echo '<h2>' . __( 'Betala din order med Swish', 'redlight-swish' ) . '</h2>' . PHP_EOL;
+                ?>
+                <div class="logo centered">
+                    <img style="width:67px;height:70px;" alt="Swish - Logotyp - Bild" class="centered" src="<?php echo $this->swishimglogo;?>" />
+                    <img style="width:153px;height:70px;" alt="Swish - Logotyp - Text" src="<?php echo $this->swishtextlogo;?>" />
+                </div>
+                <?php
+                echo '<p>Vänligen betala din order genom att swisha <strong>'.$order->order_total.' '.$order->order_currency.'</strong> till ';
+                if($this->show_desc == 'yes'){echo $this->swish_number_desc . ', <strong>';}else{echo 'nummer <strong>';}
+                echo $this->swish_number .'</strong>.';
+                if(isset($this->swish_number_two) && $this->swish_number_two !== ''){
+                    echo '<br>Alternativt betalar du till ';
+                    if($this->show_desc_two == 'yes'){
+                        echo $this->swish_number_desc_two . ', <strong>';
+                    }
+                    else{echo 'nummer <strong>';}
+                    echo $this->swish_number_two .'</strong>.';
+                }
+                echo '<br>Ange <strong>'. $order_id . '</strong> som meddelande i din Swish-app.</p>'.
+                wpautop( wptexturize( $this->message ) );
+
+                echo '<ul class="order_details swish_details">' . PHP_EOL;
+
+                // Swish account fields shown on the thanks page and in emails
+                $account_fields = apply_filters( 'woocommerce_swish_account_fields', $this->swish_number, $order_id );
+
+                echo '</ul>';
+
+            }
+        }
+		
 
         /**
          * Process the payment and return the result
