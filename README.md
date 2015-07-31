@@ -8,7 +8,7 @@
 Det här pluginet lägger till swish som en betalningsmöjlighet till Woocommerce
 
 ### Beskrivning
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+Det här pluginet lägger till swish som en betalningsmöjlighet till Woocommerce
 
 #### Bidra
 [SwishWoocommerce](https://github.com/hedqvist/SwishWoocommerce) finns på GitHub. Om du vill bidra, forka och skicka en pull-request!
@@ -48,7 +48,7 @@ Inga bilder ännu.
 This adds Swish as an payment-gateway for Woocommerce.
 
 ### Description
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+This adds Swish as an payment-gateway for Woocommerce.
 
 #### Contributing
 [SwishWoocommerce](https://github.com/hedqvist/SwishWoocommerce) is available on GitHub. If you want to contribute, please fork it and send a pull request!
