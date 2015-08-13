@@ -3,7 +3,8 @@
 * Donera länk: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TKFJD9YXKRW3W
 * Taggar: Swish, getSwish.se, Woocommerce, Wordpress
 * Kräver minst: Wordpress 4.0
-* Testad upp till: Wordpress 4.2.3
+* Testad upp till: Wordpress 4.2.4
+* Testad upp till: Woocommerce 2.4.3
 
 Det här pluginet lägger till swish som en betalningsmöjlighet till Woocommerce
 
@@ -43,7 +44,8 @@ Inga bilder ännu.
 * Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TKFJD9YXKRW3W
 * Tags: Swish, getSwish.se, Woocommerce, Wordpress
 * Requires at least: Wordpress 4.0
-* Tested up to: Wordpress 4.2.3
+* Tested up to: Wordpress 4.2.4
+* Tested up to: Woocommerce 2.4.3
 
 This adds Swish as an payment-gateway for Woocommerce.
 
