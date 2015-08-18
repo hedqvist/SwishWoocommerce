@@ -28,7 +28,9 @@ Ja.
 All text ska vara möjlig att ändra.
 
 ###Screenshots
-Inga bilder ännu.
+![alt text](http://redlight.se/wp-content/uploads/2015/08/Swish-1.png "Swish Betalsätt till Woocommerce")
+
+![alt text](http://redlight.se/wp-content/uploads/2015/08/Swish-2.png "Swish betalningsdetaljer som visas när order är lagd")
 
 **Ändringslogg**
 
