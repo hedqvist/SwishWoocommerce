@@ -3,7 +3,7 @@
 * Taggar: Swish, getSwish.se, Woocommerce, Wordpress
 * Kräver minst: Wordpress 4.0
 * Testad upp till: Wordpress 4.2.4
-* Testad upp till: Woocommerce 2.4.3
+* Testad upp till: Woocommerce 2.4.4
 
 Det här pluginet lägger till swish som en betalningsmöjlighet till Woocommerce
 
@@ -31,6 +31,8 @@ All text ska vara möjlig att ändra.
 Inga bilder ännu.
 
 **Ändringslogg**
+**1.0.2**
+* *Lagt till support för [WooCommerce Sequential Order Numbers](https://wordpress.org/support/view/plugin-reviews/woocommerce-sequential-order-numbers).*
 
 **1.0.1**
 * *La till support för epost till kund.*
