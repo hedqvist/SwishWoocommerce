@@ -1,5 +1,5 @@
 ##Swish till Woocommerce
-* Donera länk: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TKFJD9YXKRW3W
+* Donera länk: [Donera](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TKFJD9YXKRW3W)
 * Taggar: Swish, getSwish.se, Woocommerce, Wordpress
 * Kräver minst: Wordpress 4.0
 * Testad upp till: Wordpress 4.2.4
