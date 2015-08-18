@@ -27,18 +27,18 @@ Ja.
 **Kan jag ändra någon text?**
 All text ska vara möjlig att ändra.
 
-###Screenshots
-![alt text](http://redlight.se/wp-content/uploads/2015/08/Swish-1.png "Swish Betalsätt till Woocommerce")
-
-![alt text](http://redlight.se/wp-content/uploads/2015/08/Swish-2.png "Swish betalningsdetaljer som visas när order är lagd")
-
 **Ändringslogg**
 
 **1.0.2**
 * *Lagt till support för [WooCommerce Sequential Order Numbers](https://wordpress.org/support/view/plugin-reviews/woocommerce-sequential-order-numbers).*
 
 **1.0.1**
-* *La till support för epost till kund.*
+* *Lagt till support för epost till kund.*
 
 **1.0**
 * *Skapade pluginet*
+
+###Screenshots
+![alt text](http://redlight.se/wp-content/uploads/2015/08/Swish-1.png "Swish Betalsätt till Woocommerce")
+
+![alt text](http://redlight.se/wp-content/uploads/2015/08/Swish-2.png "Swish betalningsdetaljer som visas när order är lagd")
