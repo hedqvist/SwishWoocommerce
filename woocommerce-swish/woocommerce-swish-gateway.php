@@ -3,7 +3,7 @@
     Plugin Name: Swish (Manual) - WooCommerce Gateway
     Plugin URI: http://redlight.se/swish
     Description: Extends WooCommerce by Swish Gateway.
-    Version: 1.0.1
+    Version: 1.0.2
     Author: Christopher Hedqvist, Redlight Media AB
     Author URI: http://www.redlight.se/
 */
@@ -52,7 +52,7 @@ function init_woocommerce_swish_gateway() {
             $this->title = __( "Swish", 'redlight-swish' );
 
             // If you want to show an image next to the gateway's name on the frontend, enter a URL to an image.
-            $this->icon = plugins_url( 'assets/images/swish_logo.jpg', __FILE__ );
+            $this->icon = plugins_url( 'assets/images/swish_logo.png', __FILE__ );
             $this->swishimglogo = plugins_url( 'assets/images/Swish-logo-image-vert.png', __FILE__ );
             $this->swishtextlogo = plugins_url( 'assets/images/Swish-logo-text-vert.png', __FILE__ );
 
@@ -196,8 +196,8 @@ function init_woocommerce_swish_gateway() {
          * @param bool $plain_text
          * @return void
          */
-        public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
 
+        public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
           if ( ! $sent_to_admin && 'redlight_swish' === $order->payment_method && $order->has_status( 'on-hold' ) ) {
             $this->swish_email_details( $order->id );
           }
@@ -223,11 +223,15 @@ function init_woocommerce_swish_gateway() {
             if ( ! empty( $swish_account ) ) {
                 $swish_account = (object) $swish_account;
                 $order = new WC_Order($order_id);
+                if (class_exists( 'WC_Seq_Order_Number' ) ){
+                  $order = wc_get_order( $order_id );
+                  $order_id = $order->get_order_number();
+                }
                     //Load Swish CSS
                     wp_enqueue_style('swish');
-                ?>
+				?>
                 <div class="logo centered">
-                    <img class="rotate centered" src="<?php echo $this->swishimglogo;?>" />
+                    <img class="centered" src="<?php echo $this->swishimglogo;?>" />
                     <img src="<?php echo $this->swishtextlogo;?>" />
                 </div>
                 <div class="messages centered"><?php
@@ -245,7 +249,6 @@ function init_woocommerce_swish_gateway() {
                 }
                 echo '<br>Ange <strong>'. $order_id . '</strong> som meddelande i din Swish-app.</p>'.
                 wpautop( wptexturize( $this->message ) ).'</div>';
-
                 echo '<ul class="order_details swish_details">' . PHP_EOL;
 
                 // Swish account fields shown on the thanks page and in emails
@@ -255,12 +258,12 @@ function init_woocommerce_swish_gateway() {
 
             }
         }
-        
-        	/**
+
+        /**
           * Get bank details and place into a list format
           */
-        private function swish_email_details( $order_id = '' ) {
 
+        private function swish_email_details( $order_id = '' ) {
             if ( empty( $this->swish_number ) ) {
                 return;
             }
@@ -270,6 +273,10 @@ function init_woocommerce_swish_gateway() {
             if ( ! empty( $swish_account ) ) {
                 $swish_account = (object) $swish_account;
                 $order = new WC_Order($order_id);
+				if (class_exists( 'WC_Seq_Order_Number' ) ){
+                  $order = wc_get_order( $order_id );
+                  $order_id = $order->get_order_number();
+                }
                 echo '<h2>' . __( 'Betala din order med Swish', 'redlight-swish' ) . '</h2>' . PHP_EOL;
                 ?>
                 <div class="logo centered">
@@ -290,12 +297,10 @@ function init_woocommerce_swish_gateway() {
                 }
                 echo '<br>Ange <strong>'. $order_id . '</strong> som meddelande i din Swish-app.</p>'.
                 wpautop( wptexturize( $this->message ) );
-
                 echo '<ul class="order_details swish_details">' . PHP_EOL;
 
                 // Swish account fields shown on the thanks page and in emails
                 $account_fields = apply_filters( 'woocommerce_swish_account_fields', $this->swish_number, $order_id );
-
                 echo '</ul>';
 
             }
@@ -319,7 +324,7 @@ function init_woocommerce_swish_gateway() {
             // Reduce stock levels
             $order->reduce_order_stock();
 
-            // Remove cart
+            // Empty cart
             WC()->cart->empty_cart();
 
             // Return thankyou redirect
