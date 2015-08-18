@@ -31,6 +31,7 @@ All text ska vara möjlig att ändra.
 Inga bilder ännu.
 
 **Ändringslogg**
+
 **1.0.2**
 * *Lagt till support för [WooCommerce Sequential Order Numbers](https://wordpress.org/support/view/plugin-reviews/woocommerce-sequential-order-numbers).*
 
