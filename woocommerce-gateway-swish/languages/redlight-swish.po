@@ -1,0 +1,167 @@
+# Loco Gettext template
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Swish Gateway\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-11 22:28+0200\n"
+"POT-Revision-Date: Sun Oct 11 2015 22:18:36 GMT+0200 (Västeuropa, sommartid)\n"
+"PO-Revision-Date: 2015-10-11 22:28+0200\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Poedit 1.8.4\n"
+"Last-Translator: \n"
+"Language: en\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../gateway-swish.php:54
+msgid "redlight_swish"
+msgstr ""
+
+#: ../gateway-swish.php:57 ../gateway-swish.php:63 ../gateway-swish.php:128
+msgid "Swish"
+msgstr ""
+
+#: ../gateway-swish.php:60
+msgid ""
+"Extends WooCommerce. Provides a <a href='http://www.getswish.se' "
+"target='_blank'>Swish</a> gateway for WooCommerce."
+msgstr ""
+
+#: ../gateway-swish.php:119
+msgid "Enable / Disable"
+msgstr ""
+
+#: ../gateway-swish.php:120
+msgid "Enable this payment gateway"
+msgstr ""
+
+#: ../gateway-swish.php:125
+msgid "Title"
+msgstr ""
+
+#: ../gateway-swish.php:127
+msgid "Enter the name you want displayed for the user."
+msgstr ""
+
+#: ../gateway-swish.php:131
+msgid "Description"
+msgstr ""
+
+#: ../gateway-swish.php:133
+msgid ""
+"Pay your purchase directly through your smartphone with Swish payment app "
+"that is available for both iPhone and Android.\n"
+"                        Note that you must have your mobile phone and log-in "
+"information ready to complete the purchase . <br> Payment will be registred "
+"directly and the money will be reserved from your account. No extra fee is "
+"charged ."
+msgstr ""
+
+#: ../gateway-swish.php:136
+msgid ""
+"Swish works between  Danske Bank,  Handelsbanken,  ICA Banken,  "
+"Länsförsäkringar,  Nordea,  SEB,  Skandia,  Sparbanken Syd,  Sparbanken "
+"Öresund samt Swedbank och Sparbankerna."
+msgstr ""
+
+#: ../gateway-swish.php:140
+msgid "Message"
+msgstr ""
+
+#: ../gateway-swish.php:142
+msgid ""
+"Instructions that will appear on the \"Thank you for your order \" and the e-"
+"mail message."
+msgstr ""
+
+#: ../gateway-swish.php:143
+msgid ""
+"Since payments made ​​via Swish must be manually reviewed and matched against "
+"your order as it can take up to 24 hours before it is done. You get an email "
+"when your order is processed."
+msgstr ""
+
+#: ../gateway-swish.php:147
+msgid "Your Swish number"
+msgstr ""
+
+#: ../gateway-swish.php:149
+msgid "Enter the number you received when you joined Swish ."
+msgstr ""
+
+#: ../gateway-swish.php:152 ../gateway-swish.php:170
+msgid "Show / Hide description"
+msgstr ""
+
+#: ../gateway-swish.php:153 ../gateway-swish.php:171
+msgid "Show description"
+msgstr ""
+
+#: ../gateway-swish.php:158
+msgid "Description of your Swish account"
+msgstr ""
+
+#: ../gateway-swish.php:160
+msgid "Example: Company Inc"
+msgstr ""
+
+#: ../gateway-swish.php:165
+msgid "Your second Swish number"
+msgstr ""
+
+#: ../gateway-swish.php:167
+msgid ""
+"If you have more than one Swish number , enter the second here. If not, leave "
+"blank"
+msgstr ""
+
+#: ../gateway-swish.php:176
+msgid "Description of your second Swish account"
+msgstr ""
+
+#: ../gateway-swish.php:178
+msgid "Example: Company Two Inc"
+msgstr ""
+
+#: ../gateway-swish.php:248 ../gateway-swish.php:290
+msgid "To pay with Swish"
+msgstr ""
+
+#: ../gateway-swish.php:249 ../gateway-swish.php:297
+msgid "Please pay your order by swishing"
+msgstr ""
+
+#: ../gateway-swish.php:249 ../gateway-swish.php:297
+msgid "to"
+msgstr ""
+
+#: ../gateway-swish.php:250 ../gateway-swish.php:257 ../gateway-swish.php:298
+#: ../gateway-swish.php:305
+msgid "number"
+msgstr ""
+
+#: ../gateway-swish.php:253 ../gateway-swish.php:301
+msgid "Alternative you can send your payment to"
+msgstr ""
+
+#: ../gateway-swish.php:260 ../gateway-swish.php:308
+msgid "Enter"
+msgstr ""
+
+#: ../gateway-swish.php:260 ../gateway-swish.php:308
+msgid "as message in your Swish-app"
+msgstr ""
+
+#: ../gateway-swish.php:332
+msgid "Awaiting swish payment"
+msgstr ""
