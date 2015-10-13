@@ -16,10 +16,6 @@ By Redlight Media - http://redlight.se/
 
 Swish Gateway is a plugin that extends WooCommerce with a Swish payment gateway.se
 
-When the order is passed to Klarna a credit record of the customer is made. If the check turns out all right, Klarna creates an invoice/order in their system. After you (as the merchant) completes the order in WooCommerce, the invoice/order can be automatically activated in Klarnas system.
-
-Klarna is a great payment alternative for merchants and customers in Sweden, Norway, Finland, Denmark, Germany, Austria and the Netherlands.
-
 
 
 == INSTALLATION	 ==
